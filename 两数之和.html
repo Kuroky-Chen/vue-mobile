@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+
+		// 结题思路:空间换时间,利用hash表来减少一次循环
+
+		var twoSum = function (nums, target) {
+			debugger
+			let hash = new Map()
+			hash.set(nums[0], 0)
+			for (let i = 1; i < nums.length - 1; i++) {
+				if (hash.has(target - nums[i])) {
+					return [hash.get(target - nums[i]), i]
+				} else {
+					hash.set(nums[i], i)
+				}
+			}
+			return []
+		};
+
+		console.log(twoSum([3, 2, 4], 6))
+	</script>
+</body>
+
+</html>

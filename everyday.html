@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		var shortestToChar = function (s, c) {
+			debugger
+			let array = [];
+			for (let i = 0; i < s.length; i++) {
+				array[i] = s.length;
+			}
+			for (let i = 0; i < s.length; i++) {
+				if (s.substring(i, i + 1) === c) {
+					for (let j = 0; j < s.length; j++) {
+						array[j] = Math.min(Math.abs(i - j), array[j])
+					}
+				}
+			}
+			return array;
+		};
+		var s = "loveleetcode", c = "e";
+		shortestToChar(s,c)
+	</script>
+</body>
+
+</html>
